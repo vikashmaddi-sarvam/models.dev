@@ -1,4 +1,5 @@
-# Deprecated: the Sarvam docs nav lists "Sarvam 30B (Deprecated)" (https://docs.sarvam.ai/api-reference-docs/getting-started/pricing, accessed 2026-10-21), and GET https://api.sarvam.ai/v1/models lists only sarvam-105b and sarvam-105b-conversations.
+# Deprecated: the Sarvam docs nav lists "Sarvam 30B (Deprecated)" (https://docs.sarvam.ai/api-reference-docs/getting-started/pricing, accessed 2026-10-21).
+# The provider now defaults to /v2, but sarvam-30b is only served on /v1.
 # Toggle: reasoning_effort = null (off)
 # Effort: reasoning_effort = low|medium|high
 schema = 2
@@ -14,4 +15,5 @@ context = 65_536
 output = 65_536
 
 [api.chat-completions]
+base_url = "https://api.sarvam.ai/v1"
 compatibility = { reasoning_field = "reasoning_content" }

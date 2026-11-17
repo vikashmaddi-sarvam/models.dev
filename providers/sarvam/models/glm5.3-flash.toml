@@ -1,0 +1,21 @@
+# Pricing: https://www.sarvam.ai/api-pricing (LLM, accessed 2026-11-18): GLM 5.3 Flash INR 13.5 input / 2.5 cached input / 45 output per 1M tokens.
+# INR->USD at 94 INR per USD (the pricing page's USD toggle, 2026-11-11), rounded to 8 decimals.
+# Effort: reasoning_effort = low|high|max; reasoning cannot be disabled.
+schema = 2
+base_model = "zhipuai/glm-5.3-flash"
+
+[capabilities]
+reasoning = { supported = true, toggle = false, effort = ["low", "high", "max"] }
+
+[limit]
+context = 1_048_576
+
+[api.chat-completions]
+compatibility = { reasoning_field = "reasoning_content" }
+
+[cost.text.input]
+price = 0.14361702
+cache = { read = 0.02659574 }
+
+[cost.text.output]
+price = 0.47872340

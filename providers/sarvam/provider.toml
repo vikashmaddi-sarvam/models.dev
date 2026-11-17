@@ -2,12 +2,14 @@ name = "Sarvam AI"
 env = ["SARVAM_API_KEY"]
 npm = "@ai-sdk/openai-compatible"
 opencodeai = "@opencode/ai/providers/openai-compatible"
-# Reasoning HTTP format (accessed 2026-06-25):
-# POST https://api.sarvam.ai/v1/chat/completions accepts top-level
-# reasoning_effort = "low"|"medium"|"high" (default "medium"). JSON null,
-# not the string "null", disables reasoning for sarvam-30b and sarvam-105b.
+# Reasoning HTTP format (accessed 2026-11-18):
+# POST https://api.sarvam.ai/v2/chat/completions accepts a top-level
+# reasoning_effort. The accepted values are model-dependent:
+# glm5.3 and glm5.3-flash: low|high|max; sarvam-105b: low|medium|high;
+# deepseekv4.1-flash-1017: low|high|max. JSON null, not the string "null",
+# disables reasoning where the model allows it.
 # Sources:
 # https://docs.sarvam.ai/api-reference-docs/chat/chat-completions
 # https://docs.sarvam.ai/api-reference-docs/api-guides-tutorials/chat-completion/how-to/adjust-the-models-thinking-level
 doc = "https://docs.sarvam.ai/api-reference-docs/getting-started/models"
-api = "https://api.sarvam.ai/v1"
+api = "https://api.sarvam.ai/v2"

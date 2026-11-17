@@ -1,0 +1,22 @@
+# Pricing: https://www.sarvam.ai/api-pricing (LLM, accessed 2026-11-18): DeepSeek V4.1 Flash 1017 Interactive INR 25 input / 0.50 cached input / 105 output per 1M tokens.
+# INR->USD at 94 INR per USD (the pricing page's USD toggle, 2026-11-11), rounded to 8 decimals.
+# Effort: reasoning_effort = low|high|max; reasoning can be disabled.
+schema = 2
+base_model = "deepseek/deepseek-v4.1-flash-1017"
+name = "DeepSeek V4.1 Flash 1017 Interactive"
+
+[capabilities]
+reasoning = { supported = true, toggle = true, effort = ["low", "high", "max"] }
+
+[limit]
+context = 1_048_576
+
+[api.chat-completions]
+compatibility = { reasoning_field = "reasoning_content" }
+
+[cost.text.input]
+price = 0.26595745
+cache = { read = 0.00531915 }
+
+[cost.text.output]
+price = 1.11702128
