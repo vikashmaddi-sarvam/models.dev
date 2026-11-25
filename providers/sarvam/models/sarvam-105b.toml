@@ -1,4 +1,5 @@
-# Pricing: https://www.sarvam.ai/token-factory/pricing (accessed 2026-11-17): Sarvam 105B introductory INR 10.00 input / 0.25 cached input / 25.00 output per 1M tokens.
+# Pricing: list price INR 15.00 input / 5.00 cached input / 60.00 output per 1M tokens, https://docs.sarvam.ai/changelog/2026/10/10.md (accessed 2026-11-25).
+# Introductory INR 10.00 / 0.25 / 25.00 applies through the end of 2026 (https://docs.sarvam.ai/api/getting-started/pricing.md, accessed 2026-11-25); the date overrides carry it, so the base price is the list price from 2027-01-01.
 # INR->USD at 94 INR per USD, the rate Sarvam publishes for its USD view on https://www.sarvam.ai/token-factory/pricing (accessed 2026-11-17), rounded to 8 decimals.
 # Toggle: reasoning_effort = null (off)
 # Effort: reasoning_effort = low|medium|high
@@ -21,8 +22,17 @@ output = 128_000
 compatibility = { reasoning_field = "reasoning_content", max_tokens_field = "max_tokens" }
 
 [cost.text.input]
+price = 0.15957447
+cache = { read = 0.05319149 }
+
+[[cost.text.input.overrides]]
+when = { date = { lt = "2027-01-01" } }
 price = 0.10638298
 cache = { read = 0.00265957 }
 
 [cost.text.output]
+price = 0.63829787
+
+[[cost.text.output.overrides]]
+when = { date = { lt = "2027-01-01" } }
 price = 0.26595745
